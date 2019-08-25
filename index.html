@@ -1,0 +1,562 @@
+<html>
+<head>
+	
+	<title>Unpacking the Typologies of Neighbourhood Change and Gentrification in London</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+	<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="./css/css_style.css">
+ 	
+</head>
+
+<body>
+<!-- Dependencies -->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-radar.min.js"></script>
+
+<!-- Menu -->
+<div class="header">
+    <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" style="padding-top: 5px;" color-on-scroll="100">
+            <div class="collapse navbar-collapse">
+                <ul id="menu" >
+                    <li data-menuanchor="page1" class="active"><a href="#page1" title="Introduction"><img src="img/icon.png"></a></li>
+					<li data-menuanchor="page2" class="active"><a href="#page2" title="Overview"><img src="img/class.png"></a></li>
+                    <li data-menuanchor="page3" class="active"><a href="#page3" title="Neighbourhood Change"><img src="img/up-and-down-arrows-in-circle.png"></a></li>
+                    <li data-menuanchor="page4" class="active"><a href="#page4" title="Typologies"><img src="img/density.png"></a></li>
+                    <li data-menuanchor="page5" class="active"><a href="#page5" title="Hotspots"><img src="img/arrow-pointing-the-center-of-a-circular-button-of-two-concentric-circles.png"></a></li>
+                    <li data-menuanchor="page6" class="active"><a href="#page6" title="Predictions"><img src="img/prediction.png"></a></li>
+                </ul>
+            </div>
+    </nav>
+</div>
+
+<!-- Page 1 -->
+<div id='page1' class="bgimg-1"><img src='img/architectural-design-architecture-buildings-947662 (7).jpg' width="100%"></div>
+		 <div class="caption"><h1>Displacing the Indifference:<br>Unpacking the Nuances of London's Neighbourhood Change & Gentrification Trajectories</h1>
+			<button type="button" onclick="gopage2()" class="btn1 btn1-outline-info"><b>EXPLORE DATAVIZ</b></button>
+</div>
+
+<script>
+	function gopage2(){
+		location.href = "#page2";
+	};
+</script>
+
+<!-- Page 2 -->
+<div id='page2' class="bgimg-2" style='background-color: #ededed; opacity:1'>
+<div class="caption1"><h1>OVERVIEW</h1><h3 style='font-style: italic;'>"Gentrification is, perhaps more than any other word in urban geography or urban studies, a political, politicized, and politically loaded word" - Lees et al., 2018</h3>
+<p style='font-style: italic;'>Gentrification perpetuates impacts across society and space which are both tangible and non-trivial in nature. Thriving on the widening socio-spatial inequalities in our present day and age, gentrification's pervading presence have grown ever stronger and in increasingly varied forms.
+Yet, gentrification has commonly been conflated with other forms of neighbourhood ascent, while gentrification's nuanced trajectories have in themselves been indifferently treated. Such trends have consequently limited urban planners and city administrators in their capacities to formulate effective measures to tackle gentrification's festering problems.
+Our research was hence build upon the ambition to critically decipher the dynamics of neighbourhood change and distinguish between the differing forms of gentrification at the Lower Super Output Area (LSOA) scale across London. By visualising our study's results in the digital maps below, it is hoped that new insights and knowledge can be drawn, which will eventually contribute towards robust policy-making and solutioning efforts aimed at quelling gentrification's harmful effects.</p>
+<br>
+	<div class="row">
+	  <div class="column" style="background-color:#c8cfd6;">
+		<h2>Neighbourhood Change</h2>
+		<p style='font-style: italic;font-size:95%;'>Relative ascent, decline and stability constitute the broadest level of the neighbourhood change schema. Applying PCA on a set of proxy variables (i.e. house prices, income, % of residents classified as NS-SEC 1 and with higher qualifications), 
+		a Composite Index that broadly quantified the states of LSOAs was derived. Neighbourhood change was then established based on relative differences in a LSOA's Composite Index scores / rankings between 2001 and 2011.</p>
+		
+	  </div>
+	  <div class="column" style="background-color:#c8cfd6;">
+		<h2>Ascending & Gentrifying Typologies</h2>
+		<p style='font-style: italic;font-size:95%;'>Dis-aggregating the divergent trajectories of neighbourhood ascent and gentrification is critical in gaining clairity on the urban processes active in localised neigbourhoods. 
+		Targeted iterations of K-Means clustering was done to obtain the dominant neighbourhood change and gentrification typologies active across London's urban landscape, and their corresponding typology characteristics.</p>
+		
+	  </div>
+	  <div class="column" style="background-color:#c8cfd6;">
+		<h2>Gentrification's Hotspots</h2>
+		<p style='font-style: italic;font-size:95%;'>Given gentrification's inherently spatial nature, geospatial methods are ideal in eliciting deeper geographic insights into the urban phenomemon. 
+		Employing Hotspot Analysis on the varying manifestations of gentrification, the hotspots of LSOAs undergoing super-gentrification, marginal gentrification and mainstream gentrification, and their spatial underpinnings, were identified and visualised.</p>
+		
+	  </div>
+	  <div class="column" style="background-color:#c8cfd6;">
+		<h2>Predicting Gentrification</h2>
+		<p style='font-style: italic;font-size:95%;'>Machine Learning is a specialised field of Artifical Intelligence that is quickly gaining popularity as a robust empirical method for undertaking research. Specifically, a Random Forest multi-classifiication model was trained and calibrated using the outputs of the K-Means clustering and geospatial analysis
+		to determine whether a LSOA was gentrifying, and if so, their associated gentrification typologies. By feeding the model with recent data from the latest census and other relevant datasets, predictions of gentrification's future frontiers were generated. </p>
+		
+	  </div>
+	</div>
+	
+	<div class="row">
+	<div class="column" style="background-color:#c8cfd6; height: 65px"><button type="button" onclick="gopage3()" class="btn1 btn1-outline-info"><b>TRANSFORMATIONS</b></button></div>
+	<div class="column" style="background-color:#c8cfd6;height: 65px"><button type="button" onclick="gopage4()" class="btn1 btn1-outline-info"><b>TYPOLOGIES</b></button></div>
+	<div class="column" style="background-color:#c8cfd6;height: 65px"><button type="button" onclick="gopage5()" class="btn1 btn1-outline-info"><b>HOTSPOTS</b></button></div>
+	<div class="column" style="background-color:#c8cfd6;height: 65px"><button type="button" onclick="gopage6()" class="btn1 btn1-outline-info"><b>PREDICTIONS</b></button></div>
+	</div>
+
+<div>	
+<p style='font-style: italic;font-size:80%;font-weight: bold; text-align: left; padding-left: 20px;'> Navigating the website</p>
+<p style='font-style: italic;font-size:80%; text-align: left; padding-left: 20px;'> - Access the section of interest by selecting the icons in the navigation bar towards the right of the screen</p>
+<p style='font-style: italic;font-size:80%; text-align: left; padding-left: 20px;'> - Additional descriptions for the Carto visulaisations can be viewed by clicking on the blue-coloured banners along the left of each map</p>
+<p style='font-style: italic;font-size:80%; text-align: left; padding-left: 20px;'> - Interactive charts and graphs are displayed on the widgets integrated with each visualisation</p>
+
+<p style='font-style: italic;font-size:80%;font-weight: bold; text-align: left; padding-left: 20px;'> References & Credits</p>
+<p style='font-style: italic;font-size:80%; text-align: left; padding-left: 20px;'> Quote on homescreen: Lees, L., Slater, T., Wyly, E.K., 2008. Gentrification. Routledge, New York, NY.</p>
+<p style='font-style: italic;font-size:80%; text-align: left; padding-left: 20px;'> Icons in the navigation bar made by <a href="https://www.flaticon.com/authors/smashicons">smashicons</a>, <a href="https://www.flaticon.com/authors/freepik">freepik</a>, <a href="https://www.flaticon.com/authors/geotatah">geotatah</a> & <a href="https://www.flaticon.com/authors/dave-gandy">dave-gandy</a> from www.flaticon.com </p>
+
+</div>
+</div>
+
+<script>
+	function gopage3(){
+		location.href = "#page3";
+	};
+	
+	function gopage4(){
+		location.href = "#page4";
+	};
+	
+	function gopage5(){
+		location.href = "#page5";
+	};
+	
+	function gopage6(){
+		location.href = "#page6";
+	};
+</script>
+
+</div>
+
+<!-- Page 3 -->
+<div id='page3'>
+<div id="mapid">
+
+<div class="overlay" role="tablist" style="display: block;">
+		<div id="areainfocontent" style="display: block; padding-top: 10px;"><p style="font-style: italic;">View the typologies prevalent in each LSOA and their characteristics by hovering your mouse over LSOAs on the map</p>
+			<div id="headline" style="color: #000000; background-color: #FFFFBF;font-size:100%;">LSOA: <div id="title" style="font-size:100%;font-weight: bold"></b></div></div>
+				<h3><b>NEIGHBOURHOOD ASCENT TYPOLOGIES</b></h3>
+				<div id="ascent title" style="text-align:left;font-size:110%;font-weight: bold"></div><div id="ascent" style="text-align:left;font-size:110%;font-weight: bold"></div><div id="graphcontainer1" style="height: 38%; width: 100%"></div>
+				<h3><b>GENTRIFICATION TYPOLOGIES</b></h3>
+				<div id="gentrifying title" style="text-align:left;font-size:110%;font-weight: bold"></div><div id="gentrifying" style="text-align:left;font-size:110%;font-weight: bold"></div><div id="graphcontainer2" style="height: 38%; width: 100%"></div>
+	</div>
+</div>
+
+<script>
+  // Set CartoDB Username
+    var cartoDBUserName = "jytg17";	
+	
+	function mapper1(){
+
+      $.getJSON("https://"+cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+"SELECT the_geom, lsoa11nm, class_3_st, conv_housing, newblt_housing, avg_churn, agepop_chg, hse_nokids_chg, hse_depkid_chg, hse_nodepkids_chg, agepop_2001, conv_rate_decile, newblt_reate_decile, avg_churn_decile, agepop_chg_decile, hse_nokids_decile, hse_depkids_decile, hse_nodepkids_decile, agepop_01_decile, sec1_chg, sec2_chg, sec3_chg, sec4_chg, sec5_chg, sec6_chg, sec7_chg, hse_price_chg, income_chg, owned_chg, social_rent_chg, pte_rent_chg, income_2001, hse_price_2001, sec1_chg_zscore, sec2_chg__zscore, sec3_chg_zscore, sec4_chg_zscore, sec5_chg_zscore, sec6_chg_zscore, sec7_chg_zscore, hse_price_chg_zscore, inc_chg_zscore, owned_chg_zscore, social_rent_chg_zscore, pte_rent_chg_zscore, income_2001_zscore, hse_price_2001_zscore FROM jytg17.viz_carto", 
+				function(data) {
+
+					map = L.geoJson(data,{style: style,
+					  onEachFeature: function (feature, layer) {
+						var status;
+						if (feature.properties.class_3_st == 'SupGen'){
+							status = 'Super-Gentrification'}
+						if (feature.properties.class_3_st == 'MargGen'){
+							status = 'Marginal Gentrification'}
+						if (feature.properties.class_3_st == 'MainGen'){
+							status = 'Mainstream Gentrification'}
+						if (feature.properties.class_3_st == 'STB'){
+							status = 'Stable'}
+						if (feature.properties.class_3_st == 'IUP'){
+							status = 'Incumbent Upgrading'}
+						if (feature.properties.class_3_st == 'NRW'){
+							status = 'Re-Urbanisation'}
+						if (feature.properties.class_3_st == 'DEC'){
+							status = 'Decline'}				
+					
+						layer.bindTooltip('<p><b>' + feature.properties.lsoa11nm + '</b><br/><em>' + status + '</em><p>', {closeButton: false, offset: L.point(0, 0)});
+						layer.on('mouseover', function(e){
+							document.getElementById("title").innerHTML = feature.properties.lsoa11nm;
+							var div = document.getElementById('graphcontainer1');
+							while(div.firstChild){
+								div.removeChild(div.firstChild);
+								}
+							var div1 = document.getElementById('graphcontainer2');
+							while(div1.firstChild){
+								div1.removeChild(div1.firstChild);
+								}	
+								
+							// create a chart
+							if (feature.properties.class_3_st == 'SupGen' ||feature.properties.class_3_st == 'MargGen' || feature.properties.class_3_st == 'MainGen' || feature.properties.class_3_st == 'IUP' || feature.properties.class_3_st == 'NRW'){
+							document.getElementById("ascent title").innerHTML = "Neighbourhood Ascent Typology: ";
+							document.getElementById("ascent title").style.color= 'black';
+							
+							if (feature.properties.class_3_st == 'SupGen' || feature.properties.class_3_st == 'MargGen' || feature.properties.class_3_st == 'MainGen'){
+										status = 'Gentrification'}
+							if (feature.properties.class_3_st == 'IUP'){
+										status = 'Incumbent Upgrading'}
+							if (feature.properties.class_3_st == 'NRW'){
+										status = 'Re-Urbanisation'}
+			
+							document.getElementById("ascent").innerHTML = status;
+							
+							var chart = anychart.radar();
+							
+							 // custom scale
+							  var customScale = anychart.scales.linear();
+							  customScale.minimum(-2.1);
+							  customScale.maximum(2.1);
+
+							var lsoa = [
+							      {x: "conv_rate", value: feature.properties.conv_rate_decile, labels: "Rate of planning permissions granted for conversion/redevelopment of existing residences"},
+								  {x: "newblt_rate", value: feature.properties.newblt_reate_decile, labels: "Rate of planning permissions granted for new-built residences"},
+								  {x: "avg_churn", value: feature.properties.avg_churn_decile, labels: "Average population turnover rates"},
+								  {x: "agepop_chg", value: feature.properties.agepop_chg_decile, labels: "Chg in % of ageing residents"},
+								  {x: "hse_nokids", value: feature.properties.hse_nokids_decile, labels: "Chg in % of residents with no kids"},
+								  {x: "hse_depkids", value: feature.properties.hse_depkids_decile, labels: "Chg in % of residents with dependent kids"},
+								  {x: "hse_nodepkids", value: feature.properties.hse_nodepkids_decile, labels: "Chg in % of residents with no dependent kids"},
+								  {x: "agepop_01", value: feature.properties.agepop_01_decile, labels: "Proportion of ageing residents (2001)"}
+							];
+							
+							var avg = [
+							      {x: "conv_rate", value: -0.056723},
+								  {x: "newblt_rate", value: -0.039855},
+								  {x: "avg_churn", value: 0.011976},
+								  {x: "agepop_chg", value: -0.001704},
+								  {x: "hse_nokids", value: -0.029860},
+								  {x: "hse_depkids", value: 0.025613},
+								  {x: "hse_nodepkids", value: -0.000807},
+								  {x: "agepop_01", value: -0.013881}
+							];
+							
+							// create the first series (line) and set the data
+							var series1 = chart.line(lsoa);
+							series1.fill("#CC9933");
+							series1.stroke("3 #FFCC33");
+
+							
+							// create the second series (area) and set the data
+							var series2 = chart.area(avg);
+							series2.fill("#C0C0C0", 0.5);
+							series2.stroke("0")
+									
+							chart.yScale(customScale)
+							
+							// tool-tip 
+							  chart.tooltip().useHtml(true);
+							  var tooltip = chart.tooltip();
+							  tooltip.titleFormat("{%labels}");
+							  tooltip.positionMode("point");
+							  tooltip.format("<b>{%value}</b>");
+							
+							// set the container id
+							chart.container("graphcontainer1");
+
+							// initiate drawing the chart
+							chart.draw();
+							
+							// gentrifying charts
+							function gen(){
+							var div1 = document.getElementById('graphcontainer2');
+							while(div1.firstChild){
+								div1.removeChild(div1.firstChild);
+								}		
+														
+								if (feature.properties.class_3_st == 'SupGen' || feature.properties.class_3_st == 'MargGen' || feature.properties.class_3_st == 'MainGen'){
+										var status1;
+											if (feature.properties.class_3_st == 'SupGen'){
+												status1 = 'Super-Gentrification'}
+											if (feature.properties.class_3_st == 'MargGen'){
+												status1 = 'Marginal Gentrification'}
+											if (feature.properties.class_3_st == 'MainGen'){
+												status1 = 'Mainstream Gentrification'}
+										document.getElementById("gentrifying title").innerHTML = "Gentrification Typology: ";
+										document.getElementById("gentrifying").innerHTML = status1;			
+										document.getElementById("gentrifying title").style.color= 'black';										
+										
+							var chart1 = anychart.radar();
+							
+							 // custom scale
+							  var customScale1 = anychart.scales.linear();
+							  customScale1.minimum(-4.36);
+							  customScale1.maximum(4.36);
+
+							var lsoa1 = [
+							      {x: "sec1_chg", value: feature.properties.sec1_chg_zscore, label:"Chg in % of residents classified as NS-SEC 1"},
+								  {x: "sec2_chg", value: feature.properties.sec2_chg__zscore, label:"Chg in % of residents classified as NS-SEC 2"},
+								  {x: "sec3_chg", value: feature.properties.sec3_chg_zscore, label:"Chg in % of residents classified as NS-SEC 3"},
+								  {x: "sec4_chg", value: feature.properties.sec4_chg_zscore, label:"Chg in % of residents classified as NS-SEC 4"},
+								  {x: "sec5_chg", value: feature.properties.sec5_chg_zscore, label:"Chg in % of residents classified as NS-SEC 5"},
+								  {x: "sec6_chg", value: feature.properties.sec6_chg_zscore, label:"Chg in % of residents classified as NS-SEC 6"},
+								  {x: "sec7_chg", value: feature.properties.sec7_chg_zscore, label:"Chg in % of residents classified as NS-SEC 7"},
+								  {x: "hse_price_chg", value: feature.properties.hse_price_chg_zscore, label:"% chg in median house prices"},
+								  {x: "inc_chg", value: feature.properties.inc_chg_zscore, label:"% chg in median income"},
+								  {x: "owned_chg", value: feature.properties.owned_chg_zscore, label:"Chg in % of owned residences"},
+								  {x: "social_rent", value: feature.properties.social_rent_chg_zscore, label:"Chg in % of socially-rented residences"},
+								  {x: "pte_rent", value: feature.properties.pte_rent_chg_zscore, label:"Chg in % of privately-rented residences"},
+								  {x: "income_2001", value: feature.properties.income_2001_zscore, label:"Median income levels (2001)"},
+								  {x: "hse_price_2001", value: feature.properties.hse_price_2001_zscore, label:"Median house prices (2001)"}
+							];
+							
+							var avg1 = [
+							      {x: "sec1_chg", value: 0},
+								  {x: "sec2_chg", value: 0},
+								  {x: "sec3_chg", value: 0},
+								  {x: "sec4_chg", value: 0},
+								  {x: "sec5_chg", value: 0},
+								  {x: "sec6_chg", value: 0},
+								  {x: "sec7_chg", value: 0},
+								  {x: "hse_price_chg", value: 0},
+								  {x: "inc_chg", value: 0},
+								  {x: "owned_chg", value: 0},
+								  {x: "social_rent", value: 0},
+								  {x: "pte_rent", value: 0},
+								  {x: "income_2001", value: 0},
+								  {x: "hse_price_2001", value: 0}
+							];
+							
+							// create the first series (line) and set the data
+							var series3 = chart1.line(lsoa1);
+							series3.fill("#CC9933");
+							series3.stroke("3 #FFCC33");
+
+							
+							// create the second series (area) and set the data
+							var series4 = chart1.area(avg1);
+							series4.fill("#C0C0C0", 0.5);
+							series4.stroke("0")
+									
+							chart1.yScale(customScale1)
+							
+							// tool-tip 
+							  chart1.tooltip().useHtml(true);
+							  var tooltip1 = chart1.tooltip();
+							  tooltip1.titleFormat("{%label}");
+							  tooltip1.positionMode("point");
+							  tooltip1.format("<b>{%value}</b>");							
+							
+							// set the container id
+							chart1.container("graphcontainer2");
+
+							// initiate drawing the chart
+							chart1.draw();
+								}
+							else{
+							
+							document.getElementById("gentrifying title").innerHTML = "Non-Gentrifying LSOA"; ;
+							document.getElementById("gentrifying title").style.color= 'red';
+							document.getElementById("gentrifying").innerHTML = " ";
+							
+							var chart1 = anychart.radar();
+							
+							 // custom scale
+							  var customScale1 = anychart.scales.linear();
+							  customScale1.minimum(-4.36);
+							  customScale1.maximum(4.36);
+							
+							var avg1 = [
+							      {x: "sec1_chg", value: 0},
+								  {x: "sec2_chg", value: 0},
+								  {x: "sec3_chg", value: 0},
+								  {x: "sec4_chg", value: 0},
+								  {x: "sec5_chg", value: 0},
+								  {x: "sec6_chg", value: 0},
+								  {x: "sec7_chg", value: 0},
+								  {x: "hse_price_chg", value: 0},
+								  {x: "inc_chg", value: 0},
+								  {x: "owned_chg", value: 0},
+								  {x: "social_rent", value: 0},
+								  {x: "pte_rent", value: 0},
+								  {x: "income_2001", value: 0},
+								  {x: "hse_price_2001", value: 0}
+							];
+							
+							// create the second series (area) and set the data
+							var series4 = chart1.area(avg1);
+							series4.fill("#C0C0C0", 0.5);
+							series4.stroke("0")
+									
+							chart1.yScale(customScale1)
+							
+							// set the container id
+							chart1.container("graphcontainer2");
+
+							// initiate drawing the chart
+							chart1.draw();				
+							}
+						}
+						gen();									
+					}
+							
+							// for non-ascending lsoas
+							else {
+
+							
+							document.getElementById("ascent title").innerHTML = "Non-Ascending LSOA"; ;
+							document.getElementById("ascent title").style.color= 'red';
+							document.getElementById("ascent").innerHTML = " ";
+							document.getElementById("gentrifying title").innerHTML = "Non-Gentrifying LSOA"; ;
+							document.getElementById("gentrifying title").style.color= 'red';
+							document.getElementById("gentrifying").innerHTML = " ";
+							
+							var chart = anychart.radar();
+							
+							 // custom scale
+							  var customScale2 = anychart.scales.linear();
+							  customScale2.minimum(-2.1);
+							  customScale2.maximum(2.1);
+							
+							var avg = [
+							      {x: "conv_rate", value: -0.056723},
+								  {x: "newblt_rate", value: -0.039855},
+								  {x: "avg_churn", value: 0.011976},
+								  {x: "agepop_chg", value: -0.001704},
+								  {x: "hse_nokids", value: -0.029860},
+								  {x: "hse_depkids", value: 0.025613},
+								  {x: "hse_nodepkids", value: -0.000807},
+								  {x: "agepop_01", value: -0.013881}
+							];
+
+							// create the second series (area) and set the data
+							var series2 = chart.area(avg);
+							series2.fill("#C0C0C0", 0.5);
+							series2.stroke("0")
+										
+							chart.yScale(customScale2)
+							
+							// set the container id
+							chart.container("graphcontainer1");
+
+							// initiate drawing the chart
+							chart.draw();
+							
+							var chart1 = anychart.radar();
+							
+							 // custom scale
+							  var customScale1 = anychart.scales.linear();
+							  customScale1.minimum(-4.36);
+							  customScale1.maximum(4.36);
+							
+							var avg1 = [
+							      {x: "sec1_chg", value: 0},
+								  {x: "sec2_chg", value: 0},
+								  {x: "sec3_chg", value: 0},
+								  {x: "sec4_chg", value: 0},
+								  {x: "sec5_chg", value: 0},
+								  {x: "sec6_chg", value: 0},
+								  {x: "sec7_chg", value: 0},
+								  {x: "hse_price_chg", value: 0},
+								  {x: "inc_chg", value: 0},
+								  {x: "owned_chg", value: 0},
+								  {x: "social_rent", value: 0},
+								  {x: "pte_rent", value: 0},
+								  {x: "income_2001", value: 0},
+								  {x: "hse_price_2001", value: 0}
+							];
+							
+							// create the second series (area) and set the data
+							var series4 = chart1.area(avg1);
+							series4.fill("#C0C0C0", 0.5);
+							series4.stroke("0")
+									
+							chart1.yScale(customScale1)
+							
+							// set the container id
+							chart1.container("graphcontainer2");
+
+							// initiate drawing the chart
+							chart1.draw();
+							
+							};
+							//layer.setIcon(highlightMarker);
+							layer.openTooltip();
+						},
+						'mouseout', function(e){
+							document.getElementById("title").innerHTML = 'LSOA11NM';
+							//layer.setIcon(defaultMarker);
+							layer.closeTooltip();
+							}
+						);						
+					  },  
+					  smoothFactor: 0.01
+					}).addTo(mymap);
+				  });  
+    };
+
+	
+
+						
+	
+	var mymap = L.map('mapid', {
+	smoothZoom: true,
+	smoothZoomDelay: 0,
+	}).setView([51.505, 0.4], 10) ;
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoianl0ZzE3IiwiYSI6ImNqemprenBwODBhMWczZ285d2Y2ZnA2N2YifQ.fcKMxXo7qBXJh8N_Q876_w', {
+		maxZoom: 18,
+		attribution: 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.light'
+	}).addTo(mymap);
+	
+	
+	// get color
+	function getColor(d) {
+		return  d == 'SupGen'  ? '#253494' :
+				d == 'MargGen'  ? '#2c7fb8' :
+				d == 'MainGen'  ? '#41b6c4' :
+				d == 'NRW'  ? '#984ea3' :
+				d == 'IUP'  ? '#b4de2c' :
+				d == 'STB'   ? '#ffff99' :
+				d == 'DEC'   ? '#fdc086' :
+						  '#beaed4';
+	}
+
+		// legend
+		var legend = L.control({position: 'bottomleft'});
+		legend.onAdd = function (mymap) {
+
+		var div = L.DomUtil.create('div', 'info legend');
+		labels = ['<strong>Typologies</strong>'],
+		typologies_labels = ['Super-Gentrification', 'Marginal Gentrification', 'Mainstream Gentrification', 'Re-Urbanisation','Incumbent Unpgrading', 'Stable', 'Decline']
+		typologies = ['SupGen', 'MargGen', 'MainGen', 'NRW','IUP', 'STB', 'DEC']
+
+
+		for (var k = 0; k < typologies.length; k++) {
+
+		div.innerHTML += 
+		labels.push(
+		'<i style="background:' + getColor(typologies[k]) + '"></i> ' +
+		(typologies_labels[k] ? typologies_labels[k] : '+'));
+
+		}
+		div.innerHTML = labels.join('<br>');
+		return div;
+		};
+		legend.addTo(mymap);
+
+
+	function style(feature) {
+		return {
+			weight: 0,
+			opacity: 0,
+			color: 'white',
+			dashArray: '3',
+			fillOpacity: 0.7,
+			fillColor: getColor(feature.properties.class_3_st)
+		};
+	}
+
+    $( document ).ready(function() {
+      mapper1();
+    });
+
+		</script>
+</div>
+		
+		<!-- Page 4 -->
+		<div id='page4'>
+		<iframe width="98%" height="100%" frameborder="0" src="https://ucl-cart.carto.com/u/jytg17/builder/66f4c08e-f183-48fa-898f-7173a6a49aa2/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+		</div>
+
+		<!-- Page 5 -->
+		<div id='page5'>
+		<iframe width="98%" height="100%" frameborder="0" src="https://ucl-cart.carto.com/u/jytg17/builder/0819844c-170c-4ee8-9224-e14934ea2c75/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+		</div>
+
+		<!-- Page 6 -->
+		<div id='page6'>
+		<iframe width="98%" height="100%" frameborder="0" src="https://ucl-cart.carto.com/u/jytg17/builder/7c5138a1-8029-4d9b-afd8-28be2387105b/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+		</div>
+
+	</body>
+
+</html>

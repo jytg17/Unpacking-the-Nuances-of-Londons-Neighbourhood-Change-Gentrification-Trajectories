@@ -19,7 +19,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
 <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-radar.min.js"></script>
-<script src='./apikeys.gitignore'></script>
 
 <!-- Menu -->
 <div class="header">
@@ -139,11 +138,11 @@ Our research was hence build upon the ambition to critically decipher the dynami
 
 <script>
   // Set CartoDB Username
-    var cartoDBUserName = apikeys.cartoDBUserName;	
+    var cartoDBUserName = "jytg17";	
 	
 	function mapper1(){
 
-      $.getJSON("https://"+cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+"SELECT the_geom, lsoa11nm, class_3_st, conv_housing, newblt_housing, avg_churn, agepop_chg, hse_nokids_chg, hse_depkid_chg, hse_nodepkids_chg, agepop_2001, conv_rate_decile, newblt_reate_decile, avg_churn_decile, agepop_chg_decile, hse_nokids_decile, hse_depkids_decile, hse_nodepkids_decile, agepop_01_decile, sec1_chg, sec2_chg, sec3_chg, sec4_chg, sec5_chg, sec6_chg, sec7_chg, hse_price_chg, income_chg, owned_chg, social_rent_chg, pte_rent_chg, income_2001, hse_price_2001, sec1_chg_zscore, sec2_chg__zscore, sec3_chg_zscore, sec4_chg_zscore, sec5_chg_zscore, sec6_chg_zscore, sec7_chg_zscore, hse_price_chg_zscore, inc_chg_zscore, owned_chg_zscore, social_rent_chg_zscore, pte_rent_chg_zscore, income_2001_zscore, hse_price_2001_zscore FROM "+apikeys.cartoDBUserName+".viz_carto", 
+      $.getJSON("https://"+cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+"SELECT the_geom, lsoa11nm, class_3_st, conv_housing, newblt_housing, avg_churn, agepop_chg, hse_nokids_chg, hse_depkid_chg, hse_nodepkids_chg, agepop_2001, conv_rate_decile, newblt_reate_decile, avg_churn_decile, agepop_chg_decile, hse_nokids_decile, hse_depkids_decile, hse_nodepkids_decile, agepop_01_decile, sec1_chg, sec2_chg, sec3_chg, sec4_chg, sec5_chg, sec6_chg, sec7_chg, hse_price_chg, income_chg, owned_chg, social_rent_chg, pte_rent_chg, income_2001, hse_price_2001, sec1_chg_zscore, sec2_chg__zscore, sec3_chg_zscore, sec4_chg_zscore, sec5_chg_zscore, sec6_chg_zscore, sec7_chg_zscore, hse_price_chg_zscore, inc_chg_zscore, owned_chg_zscore, social_rent_chg_zscore, pte_rent_chg_zscore, income_2001_zscore, hse_price_2001_zscore FROM jytg17.viz_carto", 
 				function(data) {
 
 					map = L.geoJson(data,{style: style,
@@ -477,14 +476,13 @@ Our research was hence build upon the ambition to critically decipher the dynami
 
 						
 	
-	var mapboxapi = apikeys.mapboxapi;	
 	
 	var mymap = L.map('mapid', {
 	smoothZoom: true,
 	smoothZoomDelay: 0,
 	}).setView([51.505, 0.4], 10) ;
 
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='+mapboxapi, {
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoianl0ZzE3IiwiYSI6ImNqemprenBwODBhMWczZ285d2Y2ZnA2N2YifQ.fcKMxXo7qBXJh8N_Q876_w', {
 		maxZoom: 18,
 		attribution: 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox.light'
